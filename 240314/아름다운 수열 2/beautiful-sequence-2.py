@@ -21,9 +21,9 @@ for i in range(n-m+1):
         else: 
             continue_cnt_value = 0
             prev_bool = False
-        if continue_cnt_value == m and prev_bool:
-            answer += 1
-            # print('~',a_arr[i:i+m],answer)
-            continue_cnt_value = 0
+    if continue_cnt_value == m and prev_bool:
+        answer += 1
+        # print('~',a_arr[i:i+m],answer)
+        continue_cnt_value = 0
 
 print(answer)

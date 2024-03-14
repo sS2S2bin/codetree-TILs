@@ -13,21 +13,18 @@ prev_bool = False
 for i in range(n-m+1):
     continue_cnt_value = 0
     for b in b_set:
-        # print(a_arr[i:i+m].count(b))
         if a_arr[i:i+m].count(b)==b_cnt_dict[b]:
             # print(a_arr[i:i+m],'{},a cnt : {}, b cnt : {}'.format(b,a_arr[i:i+m].count(b),b_cnt_dict[b]))
             # print()
             continue_cnt_value += a_arr[i:i+m].count(b)
             prev_bool = True
-        else: 
-            continue_cnt_value = 0
-            prev_bool = False
-    # print(i,'continue_cnt_value : ',continue_cnt_value,'bool', prev_bool)
-    if not prev_bool : 
-        continue_cnt_value = 0
+        # else: 
+        #     continue_cnt_value = 0
+        #     prev_bool = False
+    # if not prev_bool : 
+    #     continue_cnt_value = 0
     if continue_cnt_value == m:
         answer += 1
-        # print('~',a_arr[i:i+m],answer)
         continue_cnt_value = 0
         prev_bool = False
 

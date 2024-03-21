@@ -22,7 +22,7 @@ def solution():
     for a in range(n):
         for b in range(n):
             # k 가 0,1,2.. n일때까지 구함
-            for k in range(n):
+            for k in range(n+1):
                 cost = pow(k,2)+pow(k+1,2)
                 curr_money, curr_cnt = bfs(a,b,k)
                 if curr_money>=cost:

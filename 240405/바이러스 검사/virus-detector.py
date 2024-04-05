@@ -8,6 +8,7 @@
 3. 자료구조
 """
 import sys
+import math
 n = int(input())
 customercount = list(map(int,sys.stdin.readline().rstrip().split()))
 captin, notcaptin = list(map(int,sys.stdin.readline().rstrip().split()))
@@ -20,8 +21,8 @@ for i in range(n):
         customercount[i] -= captin
         # print('after captin',customercount[i])
         if customercount[i]>notcaptin:
-            # print(round(customercount[i]/notcaptin))
-            answer += round(customercount[i]/notcaptin)
+            # print(math.ceil(customercount[i]/notcaptin))
+            answer += math.ceil(customercount[i]/notcaptin)
         else:
             answer +=1
     else: continue

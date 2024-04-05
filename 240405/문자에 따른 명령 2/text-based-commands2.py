@@ -9,7 +9,7 @@ for dirc in direction:
         idx = (idx+3)%4
     elif dirc == 'R':
         idx = (idx+1)%4
-    elif dirc == 'F': continue
+    elif dirc == 'F': 
         answer[0] += dr[idx]
         answer[1] += dc[idx]
 

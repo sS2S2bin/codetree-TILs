@@ -16,6 +16,6 @@ while(t):
         r,c = nr,nc
     else:
         i = (i+2)%4
-        nr,nc = r,c
+        # nr,nc = r,c
     t -= 1
 print(nr,nc)

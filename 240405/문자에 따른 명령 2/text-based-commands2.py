@@ -2,7 +2,7 @@ import sys
 direction = list(sys.stdin.readline().strip())
 answer = [0,0]
 dr = [1,0,-1,0]
-dc = [0,1,0,-1]
+dc = [0,-1,0,1]
 idx = 3
 for dirc in direction:
     if dirc == 'L':

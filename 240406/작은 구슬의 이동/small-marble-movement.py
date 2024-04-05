@@ -2,7 +2,7 @@ n,t = list(map(int, input().split()))
 r,c,d = list(input().split())
 
 mapping = {'U':0, 'R':1, 'D':2, 'L':3}
-dr = [1,0,-1,0]
+dr = [-1,0,1,0]
 dc = [0,1,0,-1]
 r,c = int(r),int(c)
 def in_range(nr,nc):

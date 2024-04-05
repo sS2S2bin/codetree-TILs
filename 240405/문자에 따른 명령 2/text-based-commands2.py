@@ -10,7 +10,7 @@ for dirc in direction:
     elif dirc == 'R':
         idx = (idx+1)%4
     elif dirc == 'F': continue
-    answer[0] += dr[idx]
-    answer[1] += dc[idx]
+        answer[0] += dr[idx]
+        answer[1] += dc[idx]
 
 print(*answer,sep=' ')

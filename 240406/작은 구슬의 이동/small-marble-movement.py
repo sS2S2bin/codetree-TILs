@@ -12,10 +12,13 @@ i = mapping[d]
 while(t):
     nr = r + dr[i]
     nc = c + dc[i]
+    # print(in_range(nr,nc))
     if in_range(nr,nc):
         r,c = nr,nc
+        # print(t,nr,nc)
     else:
         i = (i+2)%4
-        # nr,nc = r,c
+        # print('direction',t,nr,nc)
+        nr,nc = r,c
     t -= 1
 print(nr,nc)

@@ -26,33 +26,27 @@ while(zerocnt<k):
     cnt +=1
     # 회전
     arr.rotate(1)
-    # whereman = (whereman + 1)%(2*n)
-    # print('arr:',arr)
+    for i,idx in enumerate(whereman):
+        idx = (idx+1)%(n) #돌아갔으니 사람들 위치도 변경 업데이트
+        whereman[i]=idx
+        if idx == (n-1): del whereman[i]
 
     # 앞에 사람이 없고, 0이 아니면 이동
     for i,idx in enumerate(whereman):
-        idx = (idx+1)%(n) #rotate 한거 업데이트 지금하깅
-        # print(i,idx, whereman)
         if idx == n-1:
             whereman.pop(i)
         else:
             if (idx+1) not in whereman and arr[idx+1]>0:
                 arr[idx+1] -=1
-                if arr[idx+1]==0:
-                    zerocnt +=1
-                if (idx+1)==(n-1): 
-                    del whereman[i]
-                elif(idx+1)!=(n-1):
-                    whereman[i]=idx+1
-                    # print('이동 후',whereman)
+                if arr[idx+1]==0: zerocnt +=1
+                if (idx+1)==(n-1): del whereman[i]
+                elif(idx+1)!=(n-1): whereman[i]=idx+1
 
     # 1번에 사람이 없고 안정성 ok 면 사람 추가
     if 0 not in whereman and arr[0]!=0:
         whereman.append(0)
         arr[0] -=1
-        if arr[0]==0:
-            zerocnt+=1
-    # print('where:',whereman)
-# print("answer : {}, zero cnt : {}, k:{} , arr:{}".format(cnt,zerocnt,k,arr))
+        if arr[0]==0: zerocnt+=1
+
 
 print(cnt)

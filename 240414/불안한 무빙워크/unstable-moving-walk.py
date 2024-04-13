@@ -23,13 +23,15 @@ while(zerocnt<k):
     cnt +=1
     # 회전
     arr.rotate(1)
-
-    # 앞에 사람이 없고, 0이 아니면 이동
-    for idx in range(n-1,0,-1):
-        if idx==n-1 and whereman[idx]: 
+    for i in range(n-1,0,-1):
+        if i==n-1 and whereman[i]: 
             whereman[n-1] = False # n번 사람 내려 
         else: 
-            whereman[idx] = whereman[idx-1]
+            whereman[i] = whereman[i-1]
+    whereman[0] = False
+
+    # 앞에 사람이 없고, 0이 아니면 이동
+    for idx in range(n-2,0,-1):
         thereisperson = whereman[idx]
         if thereisperson:
 

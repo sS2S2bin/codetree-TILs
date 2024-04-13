@@ -42,17 +42,13 @@ while(zerocnt<k):
             #이동하려는 칸이 맨 마지막 칸이면
             if idx==n-2 and arr[n-1]>0: 
                 whereman[n-1]=False
-                whereman[idx] = False # 이제 여기 사람 없음
-                arr[idx+1] -=1 # 앞 칸 안정성 빼기
-                if arr[idx+1]==0: 
-                    zerocnt +=1
             # 나머지 칸들은 앞에 칸이 0이 아닌지 체크
             elif (not whereman[idx+1]) and arr[idx+1]>0: 
                 whereman[idx+1] = True
-                whereman[idx] = False # 이제 여기 사람 없음
-                arr[idx+1] -=1 # 앞 칸 안정성 빼기
-                if arr[idx+1]==0: 
-                    zerocnt +=1
+            whereman[idx] = False # 이제 여기 사람 없음
+            arr[idx+1] -=1 # 앞 칸 안정성 빼기
+            if arr[idx+1]==0: 
+                zerocnt +=1
     whereman[0] = False
     # 1번에 사람이 없고 안정성 ok 면 사람 추가
     if not whereman[0] and arr[0]>0:
@@ -60,44 +56,5 @@ while(zerocnt<k):
         arr[0] -=1
         if arr[0]==0:
             zerocnt +=1
-        
-
-
-
-
-"""
-while(zerocnt<k):
-    cnt +=1
-    # 회전
-    arr.rotate(1)
-    print('start!',cnt,arr)
-    print('이동전', whereman)
-
-    # 앞에 사람이 없고, 0이 아니면 이동
-    for i,idx in enumerate(whereman):
-        idx = (idx+1)%(n) #rotate 한거 업데이트 지금하깅
-        print(i,'before',idx,whereman)
-        if idx == n-1: 
-            del whereman[i]
-            print('나가용')
-        else:
-            if (idx+1) not in whereman and arr[idx+1]>0:
-                arr[idx+1] -=1
-                if arr[idx+1]==0:
-                    zerocnt +=1
-                if (idx+1)==(n-1): 
-                    del whereman[i]
-                    print('나가용',idx)
-                elif(idx+1)!=(n-1):
-                    whereman[i]=idx+1
-        print(i,'after',idx,whereman)
-
-    # 1번에 사람이 없고 안정성 ok 면 사람 추가
-    if 0 not in whereman and arr[0]!=0:
-        whereman.append(0)
-        arr[0] -=1
-        if arr[0]==0:
-            zerocnt+=1
-"""
 
 print(cnt)
